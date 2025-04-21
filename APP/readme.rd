@@ -1,35 +1,36 @@
-# 🏀 Player Manager App
+# 🏀 球員圖鑑 App
+Android開發的應用程式，透過SQLite資料庫管理球員資料，提供使用者查詢、瀏覽、訓練紀錄及外部網站。
+## 📋 功能總覽
+- 📄 球員數據：可瀏覽球員的詳細統計資料  
+- 👥 球員列表：展示所有球員資訊，支援點擊切換至詳細頁面  
+- 🌐 外部網站：收錄相關網站，點擊可自動跳轉  
+- 🏋️ 訓練紀錄：記錄每日表現，支援清除與打擊率計算
+## 🧭 頁面架構與操作流程
+### 🔹 主頁
+- 顯示功能按鈕：球員列表、訓練紀錄、數據頁面、外部網站
+### 🔹 球員列表頁面
+- 使用 `ListView` 顯示資料庫中的球員清單  
+- 點擊項目可切換至球員數據頁面
+### 🔹 數據頁面
+- 顯示指定球員基本資料與各項數據  
+- 使用 `TableLayout` 呈現，並透過 `Intent` 接收 ID、Name 進行資料查詢
+### 🔹 外部網站頁面
+- 使用 `Intent` 跳轉至相關網站連結
+### 🔹 訓練紀錄頁面
+- 使用 `SharedPreferences` 儲存每日成績
+- 自動計算打擊率，可清除歷史資料
+## 🔧 技術重點與程式碼概要
+### 📁 資料庫設計（SQLite）
+- 建立本地資料庫與資料表
+- 插入初始球員資料
+- 提供查詢與刪除功能
+### 🔄 Activity 切換與資料傳遞
+- 使用 `Intent` 傳遞球員 ID 與名稱
+- 切換至詳細資料頁面並查詢資料庫
+### 📊 UI 組件應用
+- `ListView` 用於展示球員清單
+- `TableLayout` 用於展示球員數據
+- `SharedPreferences` 儲存使用者紀錄
 
-這是一款基於 Android 的球員管理應用程式，可查詢、瀏覽球員名單，並導向至詳細資訊與其他功能頁面。專案使用原生 Android 技術開發，並搭配 SQLite 資料庫儲存球員資料。
 
-## 📱 主要功能
-
-- 顯示球員列表（從 SQLite 資料庫讀取）
-- 點擊球員可查看詳細資料（透過 Intent 傳遞資料至下一頁）
-- 提供按鈕跳轉至其他功能頁面（MainActivity3、MainActivity4）
-- 簡潔易用的介面設計（使用 `ListView` 和原生元件）
-
-## 🧰 使用技術
-
-- Kotlin / Java
-- Android SDK
-- SQLite (本地資料庫)
-- Android `Intent` / Activity 切換
-- ListView & ArrayAdapter
-- 原生 View 綁定與事件處理
-
-## 🛠️ 安裝與執行方式
-
-1. Clone 專案：
-    ```bash
-    git clone https://github.com/jq680106/swim.git
-    ```
-
-2. 使用 Android Studio 開啟 `APP/MyApplication2` 專案目錄
-
-3. 執行 App 至模擬器或實機
-
-4. 若需自定資料庫內容，請檢查 `MyDBHelper.kt` 中的 `onCreate` 方法或以 SQLite 工具預先建立資料
-
-## 📂 專案結構簡介
 
